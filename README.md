@@ -8,8 +8,8 @@ CHIRPSTAN NW SERVER ROADMAP:
 
 1 - Actualización de paquetes:
 
- sudo apt-get update \n
- sudo apt-get upgrade \n
+ - sudo apt-get update 
+ - sudo apt-get upgrade 
 
 Habilitar SSH:
 
@@ -22,6 +22,19 @@ sudo ufw allow ssh
 -Instalación de Postgre:
 
 sudo apt-get install postgresql
+
+- Configuración de Postgre:
+
+sudo -u postgres psql
+
+-- create the chirpstack_ns user with password 'dbpassword'
+create role chirpstack_ns with login password 'dbpassword';
+
+-- create the chirpstack_ns database
+create database chirpstack_ns with owner chirpstack_ns;
+
+-- exit the prompt
+\q
 
 -Instalación de Redis:
  Redis is an open source (BSD licensed), in-memory data structure store, used as a database,
