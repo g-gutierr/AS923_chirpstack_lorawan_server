@@ -11,6 +11,14 @@ CHIRPSTAN NW SERVER ROADMAP:
  sudo apt-get update \n
  sudo apt-get upgrade \n
 
+Habilitar SSH:
+
+https://linuxize.com/post/how-to-enable-ssh-on-ubuntu-18-04/
+sudo apt update
+sudo apt install openssh-server
+sudo systemctl status ssh
+sudo ufw allow ssh
+
 -Instalación de Postgre:
 
 sudo apt-get install postgresql
