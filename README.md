@@ -27,10 +27,10 @@ sudo apt-get install postgresql
 
 sudo -u postgres psql
 
--- create the chirpstack_ns user with password 'dbpassword'
+-- create the chirpstack_ns user with password 'dbpassword':
 create role chirpstack_ns with login password 'dbpassword';
 
--- create the chirpstack_ns database
+-- create the chirpstack_ns database: 
 create database chirpstack_ns with owner chirpstack_ns;
 
 -- exit the prompt
