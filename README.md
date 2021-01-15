@@ -8,8 +8,8 @@ CHIRPSTAN NW SERVER ROADMAP:
 
 1 - Actualización de paquetes:
 
- sudo apt-get update
- sudo apt-get upgrade
+ sudo apt-get update \n
+ sudo apt-get upgrade \n
 
 -Instalación de Postgre:
 
