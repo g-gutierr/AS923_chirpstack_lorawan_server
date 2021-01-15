@@ -35,6 +35,8 @@ sudo apt-get install postgresql
 ChirpStack Network Server uses Redis for storing device-session data and non-persistent data like distributed locks, deduplication sets and meta-data.
 
 Notes: * At least Redis 2.6.0 is required. * Flushing the Redis database means all devices have to rejoin (OTAA) the network.
+
+sudo apt install redis-server
  
  -Instalación de MQTT Broker Debian / Ubuntu:
  
