@@ -60,6 +60,8 @@ sudo apt install mosquitto
 
 RUTA: /etc/mosquitto
 
+mosquitto Full config file: /usr/share/doc/mosquitto/examples/mosquitto.conf.example
+
 See http://mosquitto.org/ for more information.
 
 mosquitto - running the Mosquitto broker
