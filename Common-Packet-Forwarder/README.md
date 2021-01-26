@@ -75,3 +75,47 @@ When lorafwd starts, a file containing the default EUI is generated, based on in
 cat /var/run/lora/gateway-id.toml 
 gateway.id = 0x7076FF0039050789
 If a new EUI has been defined under /etc/lorafwd.toml, then, this new EUI is used by lorafwd. Otherwise, the default EUI is used.
+
+
+Keros application configuration
+Starting from version 4.3, KerOS firmware is delivered with Kerlink Common Packet Forwarder and WMC Embedded applications. These applications are disabled by default.
+
+klk_apps_config
+klk_apps_config is a small script used to configure Kerlink Common Packet Forwarder and WMC Embedded applications.
+Kerlink advises to reboot the gateway after using klk_apps_config to enable/disable an application.
+
+# klk_apps_config -h
+klk_apps_config [options]
+
+options:
+-h, --help          show help
+--activate-wmc      activate wmc embedded (and CPF)
+--deactivate-wmc    deactivate wmc embedded (and CPF)
+--activate-cpf      activate lorad and lorafwd
+--deactivate-cpf    deactivate lorad and lorafwd
+-s, --wmc-server    WMC server (mandatory if activating WMC)
+-p, --wmc-port      WMC port (default 1194)
+--lns-server        LNS server (default 172.17.0.1)
+--lns-dport         LNS downlink port (default 1700)
+--lns-uport         LNS uplink port (default 1700)
+--loradconf         lorad configuration file name/path
+             Can be:
+                    - a complete file path
+                    - an example file name (ex:AS923-JP.json)
+This script can be used to:
+
+activate CPF (lorad and lorafwd) only.
+deactivate CPF
+activate WMC embedded applications (CPF + BSCC + lora_snmp)
+deactivate WMC embedded applications
+It can also be used to switch to another WMC server while WMC embedded is already activated (use –activate-wmc action with another server parameter while WMC Embedded is already activated).
+
+Script parameters details:
+
+One of the four possible actions must be chosen (activate-wmc, deactivate-wmc, activate-cpf, deactivate-cpf)
+--wmc-server: address of the WMC server to connect to (example: wmcvalidinstall.wanesy.com)
+--wmc-port: port of the WMC server to connect to
+--lns-server: address of the LNS server (lorafwd parameter)
+--lns-dport: LNS downlink port (lorafwd parameter)
+--lns-uport: LNS uplink port (lorafwd parameter)
+--loradconf: this can be the complete path of the Lorad configuration you want to use or the file name of the example lorad configuration delivered for your platform. If not given the platform default will be used (EU868XXX.json)
