@@ -1,0 +1,1 @@
+Configuraciones realizadas sobre GATEWAY KERLINK
